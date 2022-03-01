@@ -2,6 +2,7 @@ import React from 'react'
 import Todo from './Todo'
 
 function TodoList({ todos, setTodos, filteredTodos }) {
+
   return (
     <section className='main'>
       <input className='toggle-all' type='checkbox' />

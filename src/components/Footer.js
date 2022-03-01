@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Footer({ filteredTodos, setFilteredTodos, status, setStatus}) {
+function Footer({ todos, setTodos, filteredTodos, setFilteredTodos, status, setStatus}) {
 
   const statusHandler = (e) => {
     setStatus(e.target.id)
   }
-  const itemsLeft = filteredTodos.length
+  const itemsLeft = filteredTodos.filter((item) => item.completed === false).length
 
   const removeHandler = () => {
-    setFilteredTodos(filteredTodos.filter((item) => item.completed === false))
+    setTodos(todos.filter((item) => item.completed === false))
   }
 
   return (

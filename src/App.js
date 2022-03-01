@@ -33,8 +33,8 @@ function App() {
     <div>
       <section className='todoapp'>
         <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
-        <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
-        <Footer filteredTodos={filteredTodos} setFilteredTodos={setFilteredTodos} status={status} setStatus={setStatus} />
+        <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} setFilteredTodos={setFilteredTodos} />
+        <Footer todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} setFilteredTodos={setFilteredTodos} status={status} setStatus={setStatus} />
       </section>
       
     </div>
