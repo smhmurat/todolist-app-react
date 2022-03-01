@@ -1,32 +1,35 @@
 import React from 'react'
 
-function Footer({ todos, setTodos, setStatus}) {
-
+function Footer({ filteredTodos, setFilteredTodos, status, setStatus}) {
 
   const statusHandler = (e) => {
     setStatus(e.target.id)
   }
+  const itemsLeft = filteredTodos.length
 
+  const removeHandler = () => {
+    setFilteredTodos(filteredTodos.filter((item) => item.completed === false))
+  }
 
   return (
     <footer className='footer'>
       <span className="todo-count">
-        <strong>0 </strong>
+        <strong>{itemsLeft} </strong>
         items left
 		  </span>
 
 		<ul className="filters">
 			<li>
-				<a onClick={statusHandler} className="selected" id='all'>All</a>
+				<a href='/#' onClick={statusHandler} className={`${status === 'all' ? 'selected' : ''}`} id='all'>All</a>
 			</li>
 			<li>
-				<a onClick={statusHandler} id='active'>Active</a>
+				<a href='/#' onClick={statusHandler} className={`${status === 'active' ? 'selected' : ''}`} id='active'>Active</a>
 			</li>
 			<li>
-				<a onClick={statusHandler} id='completed'>Completed</a>
+				<a href='/#' onClick={statusHandler} className={`${status === 'completed' ? 'selected' : ''}`} id='completed'>Completed</a>
 			</li>
 		</ul>
-		<button className="clear-completed">
+		<button onClick={removeHandler} type='submit' className="clear-completed">
 			Clear completed
 		</button>
     </footer>

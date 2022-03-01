@@ -27,12 +27,14 @@ function App() {
         break;
     }
   }
+
+  
   return (
     <div>
       <section className='todoapp'>
         <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
         <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
-        <Footer todos={todos} setTodos={setTodos} setStatus={setStatus} />
+        <Footer filteredTodos={filteredTodos} setFilteredTodos={setFilteredTodos} status={status} setStatus={setStatus} />
       </section>
       
     </div>
